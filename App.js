@@ -1,18 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 
 import Title from './src/components/Title';
 import Form from './src/components/Form';
 
 export default function App() {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Title />
-        <Form />
-      </View>
-    </ScrollView>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <Title />
+          <Form />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

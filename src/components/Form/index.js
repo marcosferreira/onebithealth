@@ -44,13 +44,13 @@ export default function Form() {
         </TouchableOpacity>
       </View>
       <ResultIMC messageResultImc={messageImc} resultImc={imc} />
-      <View>
+      {/* <View>
         <Text style={{ color: '#999', textAlign: 'justify', paddingHorizontal: 20, }}>
           Para a maioria dos adultos, um IMC ideal está na faixa de 18,6 a 24,9. Portanto o peso ideal é uma variável bastante ampla do calculo IMC. Para
           crianças e jovens de 2 a 18 anos, a calculadora de IMC não deve ser utilizada. Isso se deve ao fato de que o cálculo IMC leva em consideração idade e
           sexo além da altura e peso.
         </Text>
-      </View>
+      </View> */}
     </View>
   );
 }
