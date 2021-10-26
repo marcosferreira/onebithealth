@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 
 import ResultIMC from './ResultIMC';
+import styles from './style';
 
 export default function Form() {
   const [height, setHeight] = useState(null);
@@ -30,20 +31,24 @@ export default function Form() {
   }
 
   return (
-    <View>
-      <View>
-        <Text>Altura</Text>
-        <TextInput placeholder='Ex. 1.72' keyboardType='numeric' onChangeText={setHeight} value={height} />
+    <View style={styles.formContext}>
+      <View style={styles.form}>
+        <Text style={styles.formLabel}>Altura</Text>
+        <TextInput style={styles.formInput} placeholder='Ex. 1.72' keyboardType='numeric' onChangeText={setHeight} value={height} />
 
-        <Text>Peso</Text>
-        <TextInput placeholder='Ex. 80.240' keyboardType='numeric' onChangeText={setWeight} value={weight} />
+        <Text style={styles.formLabel}>Peso</Text>
+        <TextInput style={styles.formInput} placeholder='Ex. 80.240' keyboardType='numeric' onChangeText={setWeight} value={weight} />
 
-        <Button title={textButton} onPress={imcValidation} />
+        <TouchableOpacity style={styles.formButton} onPress={imcValidation}>
+          <Text style={styles.formTextButton}>{textButton}</Text>
+        </TouchableOpacity>
       </View>
       <ResultIMC messageResultImc={messageImc} resultImc={imc} />
       <View>
-        <Text style={{color: '#999', textAlign: 'justify'}}>
-        Para a maioria dos adultos, um IMC ideal está na faixa de 18,6 a 24,9. Portanto o peso ideal é uma variável bastante ampla do calculo IMC. Para crianças e jovens de 2 a 18 anos, a calculadora de IMC não deve ser utilizada. Isso se deve ao fato de que o cálculo IMC leva em consideração idade e sexo além da altura e peso.
+        <Text style={{ color: '#999', textAlign: 'justify', paddingHorizontal: 20, }}>
+          Para a maioria dos adultos, um IMC ideal está na faixa de 18,6 a 24,9. Portanto o peso ideal é uma variável bastante ampla do calculo IMC. Para
+          crianças e jovens de 2 a 18 anos, a calculadora de IMC não deve ser utilizada. Isso se deve ao fato de que o cálculo IMC leva em consideração idade e
+          sexo além da altura e peso.
         </Text>
       </View>
     </View>
